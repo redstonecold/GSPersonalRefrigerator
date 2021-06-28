@@ -1,2 +1,8 @@
-Main.java
- Main
+com/github/GSPersonalRefrigerator/Product.java
+ com.github.GSPersonalRefrigerator.Product
+com/github/GSPersonalRefrigerator/CRUD.java
+ com.github.GSPersonalRefrigerator.CRUD
+com/github/GSPersonalRefrigerator/GSPersonalRefrigerator.java
+ com.github.GSPersonalRefrigerator.GSPersonalRefrigerator
+com/github/GSPersonalRefrigerator/Menu.java
+ com.github.GSPersonalRefrigerator.Menu
