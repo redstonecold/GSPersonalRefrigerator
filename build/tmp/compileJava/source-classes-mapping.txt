@@ -1,10 +1,12 @@
-com/github/GSPersonalRefrigerator/GSPersonalRefrigerator.java
- com.github.GSPersonalRefrigerator.GSPersonalRefrigerator
 com/github/GSPersonalRefrigerator/Product.java
  com.github.GSPersonalRefrigerator.Product
+com/github/GSPersonalRefrigerator/SearchService.java
+ com.github.GSPersonalRefrigerator.SearchService
 com/github/GSPersonalRefrigerator/CRUDService.java
  com.github.GSPersonalRefrigerator.CRUDService
 com/github/GSPersonalRefrigerator/FileService.java
  com.github.GSPersonalRefrigerator.FileService
+com/github/GSPersonalRefrigerator/GSPersonalRefrigerator.java
+ com.github.GSPersonalRefrigerator.GSPersonalRefrigerator
 com/github/GSPersonalRefrigerator/MenuService.java
  com.github.GSPersonalRefrigerator.MenuService

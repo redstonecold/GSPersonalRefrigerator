@@ -14,7 +14,7 @@ public class Product {
 
     }
 
-    public Product(String consumerName, String productName, int productPrice, String purchaseDate, String enableDate, int extendNum) {
+    public Product(String productName, int productPrice, String purchaseDate, String enableDate, int extendNum, String productRegNum) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.purchaseDate = purchaseDate;
@@ -25,6 +25,10 @@ public class Product {
 
     public String tolist(){
         return this.productName + " " + this.productPrice + " " + this.purchaseDate + " " + this.enableDate + " " + this.extendNum + " " + productRegNum;
+    }
+
+    public String toListInFile(){
+        return this.productName + "$" + this.productPrice + "$" + this.purchaseDate + "$" + this.enableDate + "$" + this.extendNum + "$" + productRegNum;
     }
 
     public String getProductName() {

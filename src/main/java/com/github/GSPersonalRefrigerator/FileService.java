@@ -3,6 +3,8 @@ package com.github.GSPersonalRefrigerator;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
 
 public class FileService {
     private static String path = Paths.get(".").toAbsolutePath().toString();
@@ -14,7 +16,7 @@ public class FileService {
             BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
 
             for (Product product : productList) {
-                bw.write(product.tolist());
+                bw.write(product.toListInFile());
                 bw.newLine();
             }
             bw.flush();
@@ -24,24 +26,47 @@ public class FileService {
         }
     }
 
-    public static void readFile(String fileName){
-        try{
-            String filePath = path + fileName;
-            File file = new File(filePath);
+    public static ArrayList<Product> readFile(){
 
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            System.out.println("----파일 내용 출력 ----");
-            String line = null;
-            while((line = br.readLine()) != null) {
-                System.out.println(line);
+        ArrayList<Product> list = new ArrayList<>();
+
+        try{
+            String fileName = path + "/MyPersonalRefrigerator.txt";
+
+            File file = new File(fileName);
+
+            if(file.exists()) {
+                BufferedReader br = new BufferedReader(new FileReader(file));
+
+                String line = "";
+                while ((line = br.readLine()) != null) {
+                    StringTokenizer st = new StringTokenizer(line, "$");
+
+                    String productName = st.nextToken().trim();
+                    int productPrice = Integer.parseInt(st.nextToken().trim());
+                    String purchaseDate = st.nextToken().trim();
+                    String enableDate = st.nextToken().trim();
+                    int extendNum = Integer.parseInt(st.nextToken().trim());
+                    String productRegNum = st.nextToken().trim();
+
+                    list.add(new Product(productName, productPrice, purchaseDate, enableDate, extendNum, productRegNum));
+                }
+                System.out.println("파일 로딩 완료!");
+                System.out.println();
+                br.close();
             }
-            System.out.println("-------------------");
-            br.close();
+            else {
+                System.out.println("파일 없음");
+                System.out.println();
+            }
         } catch (FileNotFoundException e){
             e.printStackTrace();
-        } catch (IOException e){
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NoSuchElementException e){
             e.printStackTrace();
         }
+        return list;
     }
 
 }
