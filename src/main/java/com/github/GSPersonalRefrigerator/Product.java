@@ -1,33 +1,31 @@
 package com.github.GSPersonalRefrigerator;
 
+import java.util.UUID;
+
 public class Product {
-    private int num;
     private String productName;
     private int productPrice;
     private String purchaseDate;
     private String enableDate;
     private int extendNum;
+    private String productRegNum;
 
     public Product() {
 
     }
 
-    public Product(int num, String consumerName, String productName, int productPrice, String purchaseDate, String enableDate, int extendNum) {
-        this.num = num;
+    public Product(String consumerName, String productName, int productPrice, String purchaseDate, String enableDate, int extendNum) {
         this.productName = productName;
         this.productPrice = productPrice;
         this.purchaseDate = purchaseDate;
         this.enableDate = enableDate;
         this.extendNum = extendNum;
+        this.productRegNum = productRegNum;
     }
 
     public String tolist(){
-        return this.num + " " + this.productName + " " + this.productPrice + " " + this.purchaseDate + " " + this.enableDate + " " + this.extendNum;
+        return this.productName + " " + this.productPrice + " " + this.purchaseDate + " " + this.enableDate + " " + this.extendNum + " " + productRegNum;
     }
-
-    public int getNum() { return num; }
-
-    public void setNum(int num) { this.num = num; }
 
     public String getProductName() {
         return productName;
@@ -69,6 +67,11 @@ public class Product {
         this.extendNum = extendNum;
     }
 
+    public String getProductRegNum() {
+        return productRegNum;
+    }
 
-
+    public void setProductRegNum(String uuid) {
+        productRegNum = uuid;
+    }
 }

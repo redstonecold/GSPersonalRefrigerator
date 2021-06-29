@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class GSPersonalRefrigerator {
 
     public static void main(String[] args) {
-        Menu m = new Menu();
+        MenuService m = new MenuService();
         System.out.println("----시작----");
         boolean check = true;
 
