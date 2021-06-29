@@ -22,7 +22,7 @@ public class Product {
     }
 
     public String tolist(){
-        return this.productName + " " + this.productPrice + " " + this.purchaseDate + " " + this.enableDate + " " + this.extendNum;
+        return this.num + " " + this.productName + " " + this.productPrice + " " + this.purchaseDate + " " + this.enableDate + " " + this.extendNum;
     }
 
     public int getNum() { return num; }
