@@ -18,17 +18,20 @@ public class SearchService {
             String productName = br.readLine();
             boolean check = false;
             for (Product p : crud.getProductList()) {
-                if (p.getProductName().equals(productName)) {
+                if (p.getProductName().contains(productName)) {
                     if (!check) {
-                        System.out.println("제품명 | 가격 | 구매날짜 | 이용 가능 기한 | 연장 횟수 |");
+                        System.out.println();
+                        System.out.println("제품명 | 가격 | 구매날짜 | 이용 가능 기간 | 연장 횟수 |");
                         System.out.println("===========================================");
                         check = true;
                     }
                     System.out.println(p.tolist());
                 }
             }
-            if (!check)
+            if (!check) {
                 System.out.println("검색 결과가 없습니다.");
+            }
+            System.out.println();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
